@@ -1,4 +1,7 @@
-;;; -*- lexical-binding: t -*-
+;;; org-englearn.el --- English learning workflow with Org -*- lexical-binding: t -*-
+
+;; Commentary:
+;; This package provide an efficient English learning workflow, combining with org-mode, org-capture, org-roam.
 
 (require 'hydra)
 (require 'go-translate)
