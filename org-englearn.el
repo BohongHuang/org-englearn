@@ -153,8 +153,6 @@
        (insert "的"))
       (x (insert x " ")))))
 
-(defun org-englearn-get-org-roam-capture-template ())
-
 (defun org-englearn-capture-process-region (&optional beg end)
   (interactive)
   (let* ((beg (or beg (if (region-active-p) (region-beginning) (mark))))
