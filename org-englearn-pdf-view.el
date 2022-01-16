@@ -1,7 +1,8 @@
 (require 'org-englearn)
 (require 'pdf-view)
 
-(defvar org-englearn-pdf-view-disable-org-pdftools-link nil)
+(defcustom org-englearn-pdf-view-disable-org-pdftools-link nil
+  "If t, org-pdftools-link will be disabled in capture.")
 
 (defun org-englearn-capture-pdf-view ()
   (interactive)
