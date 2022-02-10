@@ -156,17 +156,18 @@
 (defun org-englearn-capture-process-region (&optional beg end)
   (interactive)
   (let* ((beg (or beg (if (region-active-p) (region-beginning) (mark))))
-        (end (or end (if (region-active-p) (region-end) (point))))
-        (cap (buffer-substring-no-properties beg end))
-        (beg (save-excursion
-               (unless (> (point) (mark)) (exchange-point-and-mark))
-               (backward-sentence)
-               (point)))
-        (end (save-excursion
-               (unless (< (point) (mark)) (exchange-point-and-mark))
-               (forward-sentence)
-               (point)))
-        (sentence (buffer-substring-no-properties beg end)))
+         (end (or end (if (region-active-p) (region-end) (point))))
+         (_ (goto-char beg))
+         (cap (buffer-substring-no-properties beg end))
+         (beg (save-excursion
+                (unless (> (point) (mark)) (exchange-point-and-mark))
+                (backward-sentence)
+                (point)))
+         (end (save-excursion
+                (unless (< (point) (mark)) (exchange-point-and-mark))
+                (forward-sentence)
+                (point)))
+         (sentence (buffer-substring-no-properties beg end)))
     (org-englearn-capture-process-buffer cap sentence)))
 
 (defun org-englearn-capture-heading-by-id-hook ()
